@@ -1,6 +1,6 @@
 name: widget_to_html
 description: Simple package that uses widget to build html, specially for emails! It has custom widget-like classes makes you feel like you are building a flutter widget, like react-email does.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/LucazzP/widget_to_html
 
 environment:

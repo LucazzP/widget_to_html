@@ -65,8 +65,9 @@ class HtmlDocument {
       }
     }
 
-    if (backgroundColor != null)
+    if (backgroundColor != null) {
       styles['background-color'] = backgroundColor!.toCss();
+    }
     if (padding != null) styles['padding'] = padding!.toCss();
     if (margin != null) styles['margin'] = margin!.toCss();
     if (border != null) {

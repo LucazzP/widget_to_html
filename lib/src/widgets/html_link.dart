@@ -17,10 +17,12 @@ class HtmlLink extends HtmlRenderable {
       if (style!.color != null) styles['color'] = style!.color!.toCss();
       if (style!.fontFamily != null) styles['font-family'] = style!.fontFamily!;
       if (style!.fontSize != null) styles['font-size'] = '${style!.fontSize}px';
-      if (style!.fontWeight != null)
+      if (style!.fontWeight != null) {
         styles['font-weight'] = style!.fontWeight!.toCss();
-      if (style!.fontStyle != null)
+      }
+      if (style!.fontStyle != null) {
         styles['font-style'] = style!.fontStyle!.toCss();
+      }
       if (style!.decoration != null) {
         styles['text-decoration'] = style!.decoration!.toCss();
       } else {
