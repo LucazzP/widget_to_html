@@ -60,7 +60,9 @@ void main() {
     });
 
     test('applies custom margin', () {
-      final widget = HtmlDivider(margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20));
+      final widget = HtmlDivider(
+        margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      );
       final fragment = renderAndParse(widget);
       final hr = findFirst(fragment, 'hr');
 
@@ -78,7 +80,11 @@ void main() {
     });
 
     test('combines all custom properties', () {
-      final widget = HtmlDivider(height: 2, color: const Color(0xFF333333), margin: const EdgeInsets.all(8));
+      final widget = HtmlDivider(
+        height: 2,
+        color: const Color(0xFF333333),
+        margin: const EdgeInsets.all(8),
+      );
       final fragment = renderAndParse(widget);
       final hr = findFirst(fragment, 'hr');
 

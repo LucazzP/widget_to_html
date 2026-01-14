@@ -1,10 +1,7 @@
 import 'color.dart';
 
 /// Style of a border side.
-enum BorderStyle {
-  none,
-  solid,
-}
+enum BorderStyle { none, solid }
 
 /// A side of a border of a box.
 class BorderSide {
@@ -18,7 +15,10 @@ class BorderSide {
     this.style = BorderStyle.solid,
   });
 
-  static const BorderSide none = BorderSide(width: 0.0, style: BorderStyle.none);
+  static const BorderSide none = BorderSide(
+    width: 0.0,
+    style: BorderStyle.none,
+  );
 
   /// Converts this border side to a CSS border value.
   String toCss() {
@@ -53,10 +53,10 @@ class Border {
   });
 
   const Border.fromBorderSide(BorderSide side)
-      : top = side,
-        right = side,
-        bottom = side,
-        left = side;
+    : top = side,
+      right = side,
+      bottom = side,
+      left = side;
 
   factory Border.all({
     Color color = Colors.black,

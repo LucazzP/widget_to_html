@@ -35,11 +35,15 @@ class HtmlTextSpan {
     if (style != null) {
       if (style!.fontFamily != null) styles['font-family'] = style!.fontFamily!;
       if (style!.fontSize != null) styles['font-size'] = '${style!.fontSize}px';
-      if (style!.fontWeight != null) styles['font-weight'] = style!.fontWeight!.toCss();
-      if (style!.fontStyle != null) styles['font-style'] = style!.fontStyle!.toCss();
+      if (style!.fontWeight != null)
+        styles['font-weight'] = style!.fontWeight!.toCss();
+      if (style!.fontStyle != null)
+        styles['font-style'] = style!.fontStyle!.toCss();
       if (style!.color != null) styles['color'] = style!.color!.toCss();
-      if (style!.backgroundColor != null) styles['background-color'] = style!.backgroundColor!.toCss();
-      if (style!.decoration != null) styles['text-decoration'] = style!.decoration!.toCss();
+      if (style!.backgroundColor != null)
+        styles['background-color'] = style!.backgroundColor!.toCss();
+      if (style!.decoration != null)
+        styles['text-decoration'] = style!.decoration!.toCss();
     }
 
     final builder = HtmlBuilder(context);

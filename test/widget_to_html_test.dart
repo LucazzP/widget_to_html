@@ -1,12 +1,10 @@
-import 'package:html/parser.dart' as htmlParser;
+import 'package:html/parser.dart' as html_parser;
 import 'package:test/test.dart';
 import 'package:widget_to_html/widget_to_html.dart';
 
 void main() {
   group('A group of tests', () {
     test('generateHtml - comprehensive email template', () async {
-      final start = DateTime.now();
-
       // Create a comprehensive email template using all widgets
       final email = HtmlContainer(
         // width: 600,
@@ -18,7 +16,12 @@ void main() {
             HtmlCenter(
               child: HtmlContainer(
                 padding: const EdgeInsets.all(20),
-                child: HtmlImage(src: 'https://placehold.co/100x100', width: 100, height: 100, alt: 'Company Logo'),
+                child: HtmlImage(
+                  src: 'https://placehold.co/100x100',
+                  width: 100,
+                  height: 100,
+                  alt: 'Company Logo',
+                ),
               ),
             ),
 
@@ -30,22 +33,34 @@ void main() {
                 HtmlLink(
                   text: 'Home',
                   href: '#home',
-                  style: const TextStyle(color: Color(0xFF007BFF), fontSize: 14),
+                  style: const TextStyle(
+                    color: Color(0xFF007BFF),
+                    fontSize: 14,
+                  ),
                 ),
                 HtmlLink(
                   text: 'Products',
                   href: '#products',
-                  style: const TextStyle(color: Color(0xFF007BFF), fontSize: 14),
+                  style: const TextStyle(
+                    color: Color(0xFF007BFF),
+                    fontSize: 14,
+                  ),
                 ),
                 HtmlLink(
                   text: 'About',
                   href: '#about',
-                  style: const TextStyle(color: Color(0xFF007BFF), fontSize: 14),
+                  style: const TextStyle(
+                    color: Color(0xFF007BFF),
+                    fontSize: 14,
+                  ),
                 ),
                 HtmlLink(
                   text: 'Contact',
                   href: '#contact',
-                  style: const TextStyle(color: Color(0xFF007BFF), fontSize: 14),
+                  style: const TextStyle(
+                    color: Color(0xFF007BFF),
+                    fontSize: 14,
+                  ),
                 ),
               ],
               spacing: 20,
@@ -65,10 +80,20 @@ void main() {
                   // Title with rich text
                   HtmlRichText(
                     spans: [
-                      HtmlTextSpan('Welcome to ', style: const TextStyle(fontSize: 24, color: Color(0xFF333333))),
+                      HtmlTextSpan(
+                        'Welcome to ',
+                        style: const TextStyle(
+                          fontSize: 24,
+                          color: Color(0xFF333333),
+                        ),
+                      ),
                       HtmlTextSpan(
                         'Our Service',
-                        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Color(0xFF007BFF)),
+                        style: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF007BFF),
+                        ),
                       ),
                     ],
                   ),
@@ -79,7 +104,11 @@ void main() {
                   HtmlText(
                     'This is a comprehensive test of all HTML email widgets. '
                     'We are testing various styling options and layouts.',
-                    style: const TextStyle(fontSize: 16, color: Color(0xFF666666), height: 1.5),
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFF666666),
+                      height: 1.5,
+                    ),
                   ),
 
                   HtmlSizedBox(height: 20),
@@ -112,7 +141,10 @@ void main() {
                             HtmlSizedBox(height: 10),
                             HtmlText(
                               'Description of the first feature with some details.',
-                              style: const TextStyle(fontSize: 14, color: Color(0xFF666666)),
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: Color(0xFF666666),
+                              ),
                             ),
                           ],
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -136,7 +168,10 @@ void main() {
                             HtmlSizedBox(height: 10),
                             HtmlText(
                               'Description of the second feature with some details.',
-                              style: const TextStyle(fontSize: 14, color: Color(0xFF666666)),
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: Color(0xFF666666),
+                              ),
                             ),
                           ],
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -156,9 +191,15 @@ void main() {
                       href: '#get-started',
                       backgroundColor: const Color(0xFF007BFF),
                       textColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 40,
+                        vertical: 15,
+                      ),
                       borderRadius: BorderRadius.circular(6),
-                      textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      textStyle: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
 
@@ -169,7 +210,11 @@ void main() {
                     alignment: Alignment.centerRight,
                     child: HtmlText(
                       'Right-aligned text',
-                      style: const TextStyle(fontSize: 14, fontStyle: FontStyle.italic, color: Color(0xFF999999)),
+                      style: const TextStyle(
+                        fontSize: 14,
+                        fontStyle: FontStyle.italic,
+                        color: Color(0xFF999999),
+                      ),
                     ),
                   ),
 
@@ -185,7 +230,10 @@ void main() {
                       borderRadius: BorderRadius.circular(4),
                       child: HtmlText(
                         'This is inside a SizedBox with specific dimensions.',
-                        style: const TextStyle(fontSize: 14, color: Color(0xFF1976D2)),
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF1976D2),
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -200,7 +248,10 @@ void main() {
                       color: const Color(0xFFFFF3E0),
                       child: HtmlText(
                         'This content is wrapped in a Padding widget.',
-                        style: const TextStyle(fontSize: 14, color: Color(0xFFE65100)),
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFFE65100),
+                        ),
                       ),
                     ),
                   ),
@@ -210,7 +261,13 @@ void main() {
                   // Rich text with links
                   HtmlRichText(
                     spans: [
-                      HtmlTextSpan('Visit our ', style: const TextStyle(fontSize: 14, color: Color(0xFF333333))),
+                      HtmlTextSpan(
+                        'Visit our ',
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF333333),
+                        ),
+                      ),
                       HtmlTextSpan(
                         'website',
                         href: 'https://example.com',
@@ -222,7 +279,10 @@ void main() {
                       ),
                       HtmlTextSpan(
                         ' for more information.',
-                        style: const TextStyle(fontSize: 14, color: Color(0xFF333333)),
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Color(0xFF333333),
+                        ),
                       ),
                     ],
                   ),
@@ -255,12 +315,18 @@ void main() {
                   HtmlSizedBox(height: 20),
 
                   // Final divider
-                  HtmlDivider(color: const Color(0xFFBDBDBD), margin: const EdgeInsets.symmetric(vertical: 10)),
+                  HtmlDivider(
+                    color: const Color(0xFFBDBDBD),
+                    margin: const EdgeInsets.symmetric(vertical: 10),
+                  ),
 
                   // Footer text
                   HtmlText(
                     '© 2024 Company Name. All rights reserved.',
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF999999)),
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF999999),
+                    ),
                     textAlign: TextAlign.center,
                   ),
                 ],
@@ -277,19 +343,40 @@ void main() {
                   HtmlLink(
                     text: 'Privacy Policy',
                     href: '#privacy',
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF666666)),
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF666666),
+                    ),
                   ),
-                  HtmlText(' | ', style: const TextStyle(fontSize: 12, color: Color(0xFF999999))),
+                  HtmlText(
+                    ' | ',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF999999),
+                    ),
+                  ),
                   HtmlLink(
                     text: 'Terms of Service',
                     href: '#terms',
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF666666)),
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF666666),
+                    ),
                   ),
-                  HtmlText(' | ', style: const TextStyle(fontSize: 12, color: Color(0xFF999999))),
+                  HtmlText(
+                    ' | ',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF999999),
+                    ),
+                  ),
                   HtmlLink(
                     text: 'Unsubscribe',
                     href: '#unsubscribe',
-                    style: const TextStyle(fontSize: 12, color: Color(0xFF666666)),
+                    style: const TextStyle(
+                      fontSize: 12,
+                      color: Color(0xFF666666),
+                    ),
                   ),
                 ],
                 spacing: 5,
@@ -302,13 +389,10 @@ void main() {
       );
 
       // Generate HTML
-      final html = await generateHtml(email);
-
-      final end = DateTime.now();
-      print('Time taken: ${end.difference(start).inMilliseconds}ms');
+      final html = HtmlDocument(body: email).render();
 
       // validate the html
-      final document = htmlParser.parse(html);
+      final document = html_parser.parse(html);
       expect(document.hasContent(), isTrue);
 
       // Verify the HTML contains expected elements

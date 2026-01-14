@@ -12,13 +12,15 @@ class Radius {
   static const Radius zero = Radius.circular(0.0);
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is Radius && x == other.x && y == other.y;
+  bool operator ==(Object other) =>
+      identical(this, other) || other is Radius && x == other.x && y == other.y;
 
   @override
   int get hashCode => Object.hash(x, y);
 
   @override
-  String toString() => x == y ? 'Radius.circular($x)' : 'Radius.elliptical($x, $y)';
+  String toString() =>
+      x == y ? 'Radius.circular($x)' : 'Radius.elliptical($x, $y)';
 }
 
 /// Base class for border radius.
@@ -101,18 +103,31 @@ class BorderRadiusDirectional extends BorderRadiusGeometry {
       bottomStart = radius,
       bottomEnd = radius;
 
-  BorderRadiusDirectional.circular(double radius) : this.all(Radius.circular(radius));
+  BorderRadiusDirectional.circular(double radius)
+    : this.all(Radius.circular(radius));
 
-  static const BorderRadiusDirectional zero = BorderRadiusDirectional.all(Radius.zero);
+  static const BorderRadiusDirectional zero = BorderRadiusDirectional.all(
+    Radius.zero,
+  );
 
   @override
   BorderRadius resolve(TextDirection? direction) {
     switch (direction) {
       case TextDirection.rtl:
-        return BorderRadius.only(topLeft: topEnd, topRight: topStart, bottomLeft: bottomEnd, bottomRight: bottomStart);
+        return BorderRadius.only(
+          topLeft: topEnd,
+          topRight: topStart,
+          bottomLeft: bottomEnd,
+          bottomRight: bottomStart,
+        );
       case TextDirection.ltr:
       case null:
-        return BorderRadius.only(topLeft: topStart, topRight: topEnd, bottomLeft: bottomStart, bottomRight: bottomEnd);
+        return BorderRadius.only(
+          topLeft: topStart,
+          topRight: topEnd,
+          bottomLeft: bottomStart,
+          bottomRight: bottomEnd,
+        );
     }
   }
 

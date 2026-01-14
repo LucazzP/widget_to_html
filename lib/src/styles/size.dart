@@ -6,24 +6,18 @@ class Size {
   const Size(this.width, this.height);
 
   /// Creates a square size.
-  const Size.square(double dimension)
-      : width = dimension,
-        height = dimension;
+  const Size.square(double dimension) : width = dimension, height = dimension;
 
   /// Creates a size with the given width and infinite height.
-  const Size.fromWidth(double width)
-      : width = width,
-        height = double.infinity;
+  const Size.fromWidth(this.width) : height = double.infinity;
 
   /// Creates a size with the given height and infinite width.
-  const Size.fromHeight(double height)
-      : width = double.infinity,
-        height = height;
+  const Size.fromHeight(this.height) : width = double.infinity;
 
   /// Creates a size from a radius (width = height = radius * 2).
   const Size.fromRadius(double radius)
-      : width = radius * 2,
-        height = radius * 2;
+    : width = radius * 2,
+      height = radius * 2;
 
   static const Size zero = Size(0.0, 0.0);
   static const Size infinite = Size(double.infinity, double.infinity);
@@ -55,5 +49,6 @@ class Size {
   int get hashCode => Object.hash(width, height);
 
   @override
-  String toString() => 'Size(${width.toStringAsFixed(1)}, ${height.toStringAsFixed(1)})';
+  String toString() =>
+      'Size(${width.toStringAsFixed(1)}, ${height.toStringAsFixed(1)})';
 }

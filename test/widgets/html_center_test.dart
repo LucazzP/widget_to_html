@@ -6,9 +6,7 @@ import '../utils/html_test_utils.dart';
 void main() {
   group('HtmlCenter', () {
     test('renders as table with child', () {
-      final widget = HtmlCenter(
-        child: HtmlText('Centered'),
-      );
+      final widget = HtmlCenter(child: HtmlText('Centered'));
       final fragment = renderAndParse(widget);
       final table = findFirst(fragment, 'table');
 
@@ -17,9 +15,7 @@ void main() {
     });
 
     test('applies center alignment', () {
-      final widget = HtmlCenter(
-        child: HtmlText('Centered'),
-      );
+      final widget = HtmlCenter(child: HtmlText('Centered'));
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -29,9 +25,7 @@ void main() {
     });
 
     test('renders child content', () {
-      final widget = HtmlCenter(
-        child: HtmlText('Hello World'),
-      );
+      final widget = HtmlCenter(child: HtmlText('Hello World'));
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -40,9 +34,7 @@ void main() {
     });
 
     test('has border-collapse style', () {
-      final widget = HtmlCenter(
-        child: HtmlText('Centered'),
-      );
+      final widget = HtmlCenter(child: HtmlText('Centered'));
       final fragment = renderAndParse(widget);
       final table = findFirst(fragment, 'table');
 
@@ -51,9 +43,7 @@ void main() {
     });
 
     test('td has zero padding', () {
-      final widget = HtmlCenter(
-        child: HtmlText('Centered'),
-      );
+      final widget = HtmlCenter(child: HtmlText('Centered'));
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 

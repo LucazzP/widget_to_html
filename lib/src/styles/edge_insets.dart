@@ -23,9 +23,18 @@ class EdgeInsets extends EdgeInsetsGeometry {
 
   const EdgeInsets.fromLTRB(this.left, this.top, this.right, this.bottom);
 
-  const EdgeInsets.all(double value) : left = value, top = value, right = value, bottom = value;
+  const EdgeInsets.all(double value)
+    : left = value,
+      top = value,
+      right = value,
+      bottom = value;
 
-  const EdgeInsets.only({this.left = 0.0, this.top = 0.0, this.right = 0.0, this.bottom = 0.0});
+  const EdgeInsets.only({
+    this.left = 0.0,
+    this.top = 0.0,
+    this.right = 0.0,
+    this.bottom = 0.0,
+  });
 
   const EdgeInsets.symmetric({double vertical = 0.0, double horizontal = 0.0})
     : left = horizontal,
@@ -47,7 +56,11 @@ class EdgeInsets extends EdgeInsetsGeometry {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is EdgeInsets && left == other.left && top == other.top && right == other.right && bottom == other.bottom;
+      other is EdgeInsets &&
+          left == other.left &&
+          top == other.top &&
+          right == other.right &&
+          bottom == other.bottom;
 
   @override
   int get hashCode => Object.hash(left, top, right, bottom);
@@ -65,17 +78,33 @@ class EdgeInsetsDirectional extends EdgeInsetsGeometry {
   final double end;
   final double bottom;
 
-  const EdgeInsetsDirectional.fromSTEB(this.start, this.top, this.end, this.bottom);
+  const EdgeInsetsDirectional.fromSTEB(
+    this.start,
+    this.top,
+    this.end,
+    this.bottom,
+  );
 
-  const EdgeInsetsDirectional.all(double value) : start = value, top = value, end = value, bottom = value;
+  const EdgeInsetsDirectional.all(double value)
+    : start = value,
+      top = value,
+      end = value,
+      bottom = value;
 
-  const EdgeInsetsDirectional.only({this.start = 0.0, this.top = 0.0, this.end = 0.0, this.bottom = 0.0});
+  const EdgeInsetsDirectional.only({
+    this.start = 0.0,
+    this.top = 0.0,
+    this.end = 0.0,
+    this.bottom = 0.0,
+  });
 
-  const EdgeInsetsDirectional.symmetric({double vertical = 0.0, double horizontal = 0.0})
-    : start = horizontal,
-      top = vertical,
-      end = horizontal,
-      bottom = vertical;
+  const EdgeInsetsDirectional.symmetric({
+    double vertical = 0.0,
+    double horizontal = 0.0,
+  }) : start = horizontal,
+       top = vertical,
+       end = horizontal,
+       bottom = vertical;
 
   static const EdgeInsetsDirectional zero = EdgeInsetsDirectional.all(0.0);
 

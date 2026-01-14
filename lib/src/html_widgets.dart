@@ -1,4 +1,5 @@
 export 'styles/styles.dart';
+export 'widgets/html_document.dart';
 export 'widgets/html_align.dart';
 export 'widgets/html_button.dart';
 export 'widgets/html_center.dart';

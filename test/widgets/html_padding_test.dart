@@ -6,7 +6,10 @@ import '../utils/html_test_utils.dart';
 void main() {
   group('HtmlPadding', () {
     test('renders as div with child', () {
-      final widget = HtmlPadding(padding: const EdgeInsets.all(10), child: HtmlText('Padded'));
+      final widget = HtmlPadding(
+        padding: const EdgeInsets.all(10),
+        child: HtmlText('Padded'),
+      );
       final fragment = renderAndParse(widget);
       final div = findFirst(fragment, 'div');
 
@@ -14,7 +17,10 @@ void main() {
     });
 
     test('applies EdgeInsets.all padding', () {
-      final widget = HtmlPadding(padding: const EdgeInsets.all(20), child: HtmlText('Padded'));
+      final widget = HtmlPadding(
+        padding: const EdgeInsets.all(20),
+        child: HtmlText('Padded'),
+      );
       final fragment = renderAndParse(widget);
       final div = findFirst(fragment, 'div');
 
@@ -23,7 +29,10 @@ void main() {
     });
 
     test('applies EdgeInsets.symmetric horizontal padding', () {
-      final widget = HtmlPadding(padding: const EdgeInsets.symmetric(horizontal: 30), child: HtmlText('Padded'));
+      final widget = HtmlPadding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: HtmlText('Padded'),
+      );
       final fragment = renderAndParse(widget);
       final div = findFirst(fragment, 'div');
 
@@ -32,7 +41,10 @@ void main() {
     });
 
     test('applies EdgeInsets.symmetric vertical padding', () {
-      final widget = HtmlPadding(padding: const EdgeInsets.symmetric(vertical: 15), child: HtmlText('Padded'));
+      final widget = HtmlPadding(
+        padding: const EdgeInsets.symmetric(vertical: 15),
+        child: HtmlText('Padded'),
+      );
       final fragment = renderAndParse(widget);
       final div = findFirst(fragment, 'div');
 
@@ -42,7 +54,12 @@ void main() {
 
     test('applies EdgeInsets.only padding', () {
       final widget = HtmlPadding(
-        padding: const EdgeInsets.only(left: 10, top: 20, right: 30, bottom: 40),
+        padding: const EdgeInsets.only(
+          left: 10,
+          top: 20,
+          right: 30,
+          bottom: 40,
+        ),
         child: HtmlText('Padded'),
       );
       final fragment = renderAndParse(widget);
@@ -53,7 +70,10 @@ void main() {
     });
 
     test('applies EdgeInsets.fromLTRB padding', () {
-      final widget = HtmlPadding(padding: const EdgeInsets.fromLTRB(5, 10, 15, 20), child: HtmlText('Padded'));
+      final widget = HtmlPadding(
+        padding: const EdgeInsets.fromLTRB(5, 10, 15, 20),
+        child: HtmlText('Padded'),
+      );
       final fragment = renderAndParse(widget);
       final div = findFirst(fragment, 'div');
 
@@ -75,7 +95,10 @@ void main() {
     });
 
     test('renders child content', () {
-      final widget = HtmlPadding(padding: const EdgeInsets.all(10), child: HtmlText('Hello'));
+      final widget = HtmlPadding(
+        padding: const EdgeInsets.all(10),
+        child: HtmlText('Hello'),
+      );
       final fragment = renderAndParse(widget);
       final div = findFirst(fragment, 'div');
 

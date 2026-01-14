@@ -25,7 +25,10 @@ void main() {
     });
 
     test('applies topCenter alignment', () {
-      final widget = HtmlAlign(alignment: Alignment.topCenter, child: HtmlText('Aligned'));
+      final widget = HtmlAlign(
+        alignment: Alignment.topCenter,
+        child: HtmlText('Aligned'),
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -35,7 +38,10 @@ void main() {
     });
 
     test('applies topRight alignment', () {
-      final widget = HtmlAlign(alignment: Alignment.topRight, child: HtmlText('Aligned'));
+      final widget = HtmlAlign(
+        alignment: Alignment.topRight,
+        child: HtmlText('Aligned'),
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -45,7 +51,10 @@ void main() {
     });
 
     test('applies centerLeft alignment', () {
-      final widget = HtmlAlign(alignment: Alignment.centerLeft, child: HtmlText('Aligned'));
+      final widget = HtmlAlign(
+        alignment: Alignment.centerLeft,
+        child: HtmlText('Aligned'),
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -55,7 +64,10 @@ void main() {
     });
 
     test('applies center alignment', () {
-      final widget = HtmlAlign(alignment: Alignment.center, child: HtmlText('Aligned'));
+      final widget = HtmlAlign(
+        alignment: Alignment.center,
+        child: HtmlText('Aligned'),
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -65,7 +77,10 @@ void main() {
     });
 
     test('applies centerRight alignment', () {
-      final widget = HtmlAlign(alignment: Alignment.centerRight, child: HtmlText('Aligned'));
+      final widget = HtmlAlign(
+        alignment: Alignment.centerRight,
+        child: HtmlText('Aligned'),
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -75,7 +90,10 @@ void main() {
     });
 
     test('applies bottomLeft alignment', () {
-      final widget = HtmlAlign(alignment: Alignment.bottomLeft, child: HtmlText('Aligned'));
+      final widget = HtmlAlign(
+        alignment: Alignment.bottomLeft,
+        child: HtmlText('Aligned'),
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -85,7 +103,10 @@ void main() {
     });
 
     test('applies bottomCenter alignment', () {
-      final widget = HtmlAlign(alignment: Alignment.bottomCenter, child: HtmlText('Aligned'));
+      final widget = HtmlAlign(
+        alignment: Alignment.bottomCenter,
+        child: HtmlText('Aligned'),
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -95,7 +116,10 @@ void main() {
     });
 
     test('applies bottomRight alignment', () {
-      final widget = HtmlAlign(alignment: Alignment.bottomRight, child: HtmlText('Aligned'));
+      final widget = HtmlAlign(
+        alignment: Alignment.bottomRight,
+        child: HtmlText('Aligned'),
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -105,7 +129,10 @@ void main() {
     });
 
     test('applies custom alignment values', () {
-      final widget = HtmlAlign(alignment: const Alignment(0.3, -0.8), child: HtmlText('Aligned'));
+      final widget = HtmlAlign(
+        alignment: const Alignment(0.3, -0.8),
+        child: HtmlText('Aligned'),
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 

@@ -6,9 +6,7 @@ import '../utils/html_test_utils.dart';
 void main() {
   group('HtmlRow', () {
     test('renders as table with single row', () {
-      final widget = HtmlRow(
-        children: [HtmlText('Item 1')],
-      );
+      final widget = HtmlRow(children: [HtmlText('Item 1')]);
       final fragment = renderAndParse(widget);
       final table = findFirst(fragment, 'table');
 
@@ -20,11 +18,7 @@ void main() {
 
     test('renders multiple children in single row', () {
       final widget = HtmlRow(
-        children: [
-          HtmlText('Item 1'),
-          HtmlText('Item 2'),
-          HtmlText('Item 3'),
-        ],
+        children: [HtmlText('Item 1'), HtmlText('Item 2'), HtmlText('Item 3')],
       );
       final fragment = renderAndParse(widget);
       final tds = findAll(fragment, 'td');
@@ -35,10 +29,7 @@ void main() {
 
     test('applies spacing between children', () {
       final widget = HtmlRow(
-        children: [
-          HtmlText('Item 1'),
-          HtmlText('Item 2'),
-        ],
+        children: [HtmlText('Item 1'), HtmlText('Item 2')],
         spacing: 20,
       );
       final fragment = renderAndParse(widget);
@@ -125,9 +116,7 @@ void main() {
     });
 
     test('has border-collapse style', () {
-      final widget = HtmlRow(
-        children: [HtmlText('Item')],
-      );
+      final widget = HtmlRow(children: [HtmlText('Item')]);
       final fragment = renderAndParse(widget);
       final table = findFirst(fragment, 'table');
 

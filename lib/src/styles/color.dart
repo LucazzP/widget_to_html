@@ -6,17 +6,19 @@ class Color {
 
   /// Creates a color from ARGB components (0-255 each).
   const Color.fromARGB(int a, int r, int g, int b)
-      : value = ((a & 0xff) << 24) |
-            ((r & 0xff) << 16) |
-            ((g & 0xff) << 8) |
-            (b & 0xff);
+    : value =
+          ((a & 0xff) << 24) |
+          ((r & 0xff) << 16) |
+          ((g & 0xff) << 8) |
+          (b & 0xff);
 
   /// Creates a color from RGB components with full opacity.
   const Color.fromRGBO(int r, int g, int b, double opacity)
-      : value = ((((opacity * 0xff ~/ 1) & 0xff) << 24) |
-            ((r & 0xff) << 16) |
-            ((g & 0xff) << 8) |
-            (b & 0xff));
+    : value =
+          ((((opacity * 0xff ~/ 1) & 0xff) << 24) |
+          ((r & 0xff) << 16) |
+          ((g & 0xff) << 8) |
+          (b & 0xff));
 
   /// Alpha channel (0-255).
   int get alpha => (value >> 24) & 0xff;

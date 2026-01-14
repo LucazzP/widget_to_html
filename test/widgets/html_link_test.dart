@@ -143,7 +143,10 @@ void main() {
     });
 
     test('supports mailto href', () {
-      final widget = HtmlLink(text: 'Email us', href: 'mailto:test@example.com');
+      final widget = HtmlLink(
+        text: 'Email us',
+        href: 'mailto:test@example.com',
+      );
       final fragment = renderAndParse(widget);
       final anchor = findFirst(fragment, 'a');
 

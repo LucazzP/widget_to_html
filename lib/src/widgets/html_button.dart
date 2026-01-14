@@ -31,7 +31,8 @@ class HtmlButton extends HtmlRenderable {
     final txtColor = textColor?.toCss() ?? '#ffffff';
 
     final resolvedPadding =
-        padding?.resolve(TextDirection.ltr) ?? const EdgeInsets.symmetric(horizontal: 24, vertical: 12);
+        padding?.resolve(TextDirection.ltr) ??
+        const EdgeInsets.symmetric(horizontal: 24, vertical: 12);
     final ph = resolvedPadding.horizontal / 2;
     final pv = resolvedPadding.vertical / 2;
 

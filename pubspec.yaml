@@ -1,7 +1,7 @@
 name: widget_to_html
-description: A starting point for Dart libraries or applications.
+description: Simple package that uses widget to build html, specially for emails! It has custom widget-like classes makes you feel like you are building a flutter widget, like react-email does.
 version: 1.0.0
-# repository: https://github.com/my_org/my_repo
+repository: https://github.com/LucazzP/widget_to_html
 
 environment:
   sdk: ^3.0.0

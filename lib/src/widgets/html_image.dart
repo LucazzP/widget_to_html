@@ -11,14 +11,29 @@ class HtmlImage extends HtmlRenderable {
   final String? alt;
   final String? mimeType;
 
-  HtmlImage({this.src, this.bytes, this.width, this.height, this.alt, this.mimeType})
-    : assert(src != null || bytes != null, 'Either src or bytes must be provided');
+  HtmlImage({
+    this.src,
+    this.bytes,
+    this.width,
+    this.height,
+    this.alt,
+    this.mimeType,
+  }) : assert(
+         src != null || bytes != null,
+         'Either src or bytes must be provided',
+       );
 
   @override
   String renderAsHtml(HtmlContext context) {
-    final imgSrc = bytes != null ? toBase64DataUri(bytes!, mimeType: mimeType ?? 'image/png') : src!;
+    final imgSrc = bytes != null
+        ? toBase64DataUri(bytes!, mimeType: mimeType ?? 'image/png')
+        : src!;
 
-    final styles = <String, String>{'display': 'block', 'border': '0', 'outline': 'none'};
+    final styles = <String, String>{
+      'display': 'block',
+      'border': '0',
+      'outline': 'none',
+    };
 
     if (width != null) styles['width'] = '${width}px';
     if (height != null) styles['height'] = '${height}px';

@@ -13,7 +13,9 @@ class HtmlDivider extends HtmlRenderable {
   String renderAsHtml(HtmlContext context) {
     final h = height ?? 1;
     final c = color?.toCss() ?? '#e0e0e0';
-    final m = margin?.resolve(TextDirection.ltr) ?? const EdgeInsets.symmetric(vertical: 16);
+    final m =
+        margin?.resolve(TextDirection.ltr) ??
+        const EdgeInsets.symmetric(vertical: 16);
 
     return '<hr style="border:none;height:${h}px;background-color:$c;margin:${m.top}px ${m.right}px ${m.bottom}px ${m.left}px;" />';
   }

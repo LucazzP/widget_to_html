@@ -13,11 +13,17 @@ void main() {
       final img = findFirst(fragment, 'img');
 
       expect(img, isNotNull);
-      expect(getAttribute(img!, 'src'), equals('https://example.com/image.png'));
+      expect(
+        getAttribute(img!, 'src'),
+        equals('https://example.com/image.png'),
+      );
     });
 
     test('applies width attribute and style', () {
-      final widget = HtmlImage(src: 'https://example.com/image.png', width: 200);
+      final widget = HtmlImage(
+        src: 'https://example.com/image.png',
+        width: 200,
+      );
       final fragment = renderAndParse(widget);
       final img = findFirst(fragment, 'img');
 
@@ -27,7 +33,10 @@ void main() {
     });
 
     test('applies height attribute and style', () {
-      final widget = HtmlImage(src: 'https://example.com/image.png', height: 150);
+      final widget = HtmlImage(
+        src: 'https://example.com/image.png',
+        height: 150,
+      );
       final fragment = renderAndParse(widget);
       final img = findFirst(fragment, 'img');
 
@@ -37,7 +46,10 @@ void main() {
     });
 
     test('applies alt attribute', () {
-      final widget = HtmlImage(src: 'https://example.com/image.png', alt: 'A sample image');
+      final widget = HtmlImage(
+        src: 'https://example.com/image.png',
+        alt: 'A sample image',
+      );
       final fragment = renderAndParse(widget);
       final img = findFirst(fragment, 'img');
 
@@ -105,7 +117,10 @@ void main() {
 
     test('prefers bytes over src when both provided', () {
       final bytes = Uint8List.fromList([0x89, 0x50, 0x4E, 0x47]);
-      final widget = HtmlImage(src: 'https://example.com/image.png', bytes: bytes);
+      final widget = HtmlImage(
+        src: 'https://example.com/image.png',
+        bytes: bytes,
+      );
       final fragment = renderAndParse(widget);
       final img = findFirst(fragment, 'img');
 
@@ -116,7 +131,12 @@ void main() {
     });
 
     test('combines width, height, and alt', () {
-      final widget = HtmlImage(src: 'https://example.com/logo.png', width: 100, height: 50, alt: 'Company Logo');
+      final widget = HtmlImage(
+        src: 'https://example.com/logo.png',
+        width: 100,
+        height: 50,
+        alt: 'Company Logo',
+      );
       final fragment = renderAndParse(widget);
       final img = findFirst(fragment, 'img');
 

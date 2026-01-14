@@ -37,10 +37,7 @@ void main() {
     });
 
     test('applies font size', () {
-      final widget = HtmlText(
-        'Hello',
-        style: const TextStyle(fontSize: 18),
-      );
+      final widget = HtmlText('Hello', style: const TextStyle(fontSize: 18));
       final fragment = renderAndParse(widget);
       final p = findFirst(fragment, 'p');
 
@@ -97,10 +94,7 @@ void main() {
     });
 
     test('applies line height', () {
-      final widget = HtmlText(
-        'Hello',
-        style: const TextStyle(height: 1.5),
-      );
+      final widget = HtmlText('Hello', style: const TextStyle(height: 1.5));
       final fragment = renderAndParse(widget);
       final p = findFirst(fragment, 'p');
 
@@ -145,10 +139,7 @@ void main() {
     });
 
     test('applies text align center', () {
-      final widget = HtmlText(
-        'Hello',
-        textAlign: TextAlign.center,
-      );
+      final widget = HtmlText('Hello', textAlign: TextAlign.center);
       final fragment = renderAndParse(widget);
       final p = findFirst(fragment, 'p');
 
@@ -157,10 +148,7 @@ void main() {
     });
 
     test('applies text align right', () {
-      final widget = HtmlText(
-        'Hello',
-        textAlign: TextAlign.right,
-      );
+      final widget = HtmlText('Hello', textAlign: TextAlign.right);
       final fragment = renderAndParse(widget);
       final p = findFirst(fragment, 'p');
 

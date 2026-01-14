@@ -35,13 +35,15 @@ class HtmlContainer extends HtmlRenderableWithChild {
 
     // BoxConstraints
     if (constraints != null) {
-      if (constraints!.minWidth > 0 && constraints!.minWidth != double.infinity) {
+      if (constraints!.minWidth > 0 &&
+          constraints!.minWidth != double.infinity) {
         styles['min-width'] = '${constraints!.minWidth}px';
       }
       if (constraints!.maxWidth < double.infinity) {
         styles['max-width'] = '${constraints!.maxWidth}px';
       }
-      if (constraints!.minHeight > 0 && constraints!.minHeight != double.infinity) {
+      if (constraints!.minHeight > 0 &&
+          constraints!.minHeight != double.infinity) {
         styles['min-height'] = '${constraints!.minHeight}px';
       }
       if (constraints!.maxHeight < double.infinity) {

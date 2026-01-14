@@ -1,50 +1,17 @@
-import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
-
-import 'package:meta/meta.dart';
 
 /// Abstract base class for all HTML renderable widgets
 abstract class HtmlRenderable {
   String renderAsHtml(HtmlContext context);
-
-  @mustCallSuper
-  Future<void> prepare() => Future.value();
-
-  @mustCallSuper
-  FutureOr<void> dispose() => Future.value();
 }
 
 abstract class HtmlRenderableWithChild extends HtmlRenderable {
   HtmlRenderable? get child;
-
-  @override
-  Future<void> prepare() async {
-    await child?.prepare();
-    return super.prepare();
-  }
-
-  @override
-  Future<void> dispose() async {
-    await child?.dispose();
-    return super.dispose();
-  }
 }
 
 abstract class HtmlRenderableWithChildren extends HtmlRenderable {
   List<HtmlRenderable> get children;
-
-  @override
-  Future<void> prepare() async {
-    await Future.wait(children.map((child) => child.prepare()));
-    return super.prepare();
-  }
-
-  @override
-  Future<void> dispose() async {
-    await Future.wait(children.map((child) async => await child.dispose()));
-    return super.dispose();
-  }
 }
 
 /// Context passed during HTML rendering
@@ -72,7 +39,9 @@ class HtmlContext {
 
   void addStyle(String selector, String property, String value) {
     final currentStyle = _styles[selector] ?? '';
-    final newStyle = currentStyle.isEmpty ? '$property:$value' : '$currentStyle;$property:$value';
+    final newStyle = currentStyle.isEmpty
+        ? '$property:$value'
+        : '$currentStyle;$property:$value';
     _styles[selector] = newStyle;
   }
 }
@@ -110,7 +79,11 @@ class HtmlBuilder {
   }
 
   /// Builds a complete HTML element
-  String element(String tagName, String content, {Map<String, String>? attributes}) {
+  String element(
+    String tagName,
+    String content, {
+    Map<String, String>? attributes,
+  }) {
     final attrs = StringBuffer();
     if (attributes != null) {
       attributes.forEach((key, value) {
@@ -134,12 +107,17 @@ class HtmlBuilder {
   /// Converts CSS properties to inline style string
   String inlineStyle(Map<String, String> properties) {
     if (properties.isEmpty) return '';
-    final styles = properties.entries.map((e) => '${e.key}:${e.value}').join(';');
+    final styles = properties.entries
+        .map((e) => '${e.key}:${e.value}')
+        .join(';');
     return ' style="$styles"';
   }
 
   /// Builds a table structure for layout
-  void tableLayout(List<List<HtmlRenderable>> rows, {Map<String, String>? tableAttributes}) {
+  void tableLayout(
+    List<List<HtmlRenderable>> rows, {
+    Map<String, String>? tableAttributes,
+  }) {
     openTag(
       'table',
       attributes: {

@@ -19,7 +19,15 @@ class FontWeight {
   static const FontWeight bold = w700;
 
   static const List<FontWeight> values = [
-    w100, w200, w300, w400, w500, w600, w700, w800, w900,
+    w100,
+    w200,
+    w300,
+    w400,
+    w500,
+    w600,
+    w700,
+    w800,
+    w900,
   ];
 
   /// Converts this font weight to a CSS font-weight value.

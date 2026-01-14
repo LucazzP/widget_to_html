@@ -41,7 +41,9 @@ class Alignment {
   }
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is Alignment && x == other.x && y == other.y;
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is Alignment && x == other.x && y == other.y;
 
   @override
   int get hashCode => Object.hash(x, y);

@@ -61,7 +61,9 @@ void main() {
     });
 
     test('applies margin', () {
-      final widget = HtmlContainer(margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10));
+      final widget = HtmlContainer(
+        margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      );
       final fragment = renderAndParse(widget);
       final div = findFirst(fragment, 'div');
 
@@ -70,7 +72,9 @@ void main() {
     });
 
     test('applies border', () {
-      final widget = HtmlContainer(border: Border.all(color: Colors.black, width: 2));
+      final widget = HtmlContainer(
+        border: Border.all(color: Colors.black, width: 2),
+      );
       final fragment = renderAndParse(widget);
       final div = findFirst(fragment, 'div');
 
@@ -88,7 +92,9 @@ void main() {
     });
 
     test('applies box constraints min-width', () {
-      final widget = HtmlContainer(constraints: const BoxConstraints(minWidth: 100));
+      final widget = HtmlContainer(
+        constraints: const BoxConstraints(minWidth: 100),
+      );
       final fragment = renderAndParse(widget);
       final div = findFirst(fragment, 'div');
 
@@ -97,7 +103,9 @@ void main() {
     });
 
     test('applies box constraints max-width', () {
-      final widget = HtmlContainer(constraints: const BoxConstraints(maxWidth: 500));
+      final widget = HtmlContainer(
+        constraints: const BoxConstraints(maxWidth: 500),
+      );
       final fragment = renderAndParse(widget);
       final div = findFirst(fragment, 'div');
 

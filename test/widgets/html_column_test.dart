@@ -16,7 +16,9 @@ void main() {
     });
 
     test('renders each child in separate row', () {
-      final widget = HtmlColumn(children: [HtmlText('Item 1'), HtmlText('Item 2'), HtmlText('Item 3')]);
+      final widget = HtmlColumn(
+        children: [HtmlText('Item 1'), HtmlText('Item 2'), HtmlText('Item 3')],
+      );
       final fragment = renderAndParse(widget);
       final trs = findAll(fragment, 'tr');
 
@@ -24,7 +26,10 @@ void main() {
     });
 
     test('applies spacing between children', () {
-      final widget = HtmlColumn(children: [HtmlText('Item 1'), HtmlText('Item 2')], spacing: 15);
+      final widget = HtmlColumn(
+        children: [HtmlText('Item 1'), HtmlText('Item 2')],
+        spacing: 15,
+      );
       final fragment = renderAndParse(widget);
       final trs = findAll(fragment, 'tr');
 
@@ -39,7 +44,10 @@ void main() {
     });
 
     test('applies crossAxisAlignment start (left)', () {
-      final widget = HtmlColumn(children: [HtmlText('Item')], crossAxisAlignment: CrossAxisAlignment.start);
+      final widget = HtmlColumn(
+        children: [HtmlText('Item')],
+        crossAxisAlignment: CrossAxisAlignment.start,
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -48,7 +56,10 @@ void main() {
     });
 
     test('applies crossAxisAlignment center', () {
-      final widget = HtmlColumn(children: [HtmlText('Item')], crossAxisAlignment: CrossAxisAlignment.center);
+      final widget = HtmlColumn(
+        children: [HtmlText('Item')],
+        crossAxisAlignment: CrossAxisAlignment.center,
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 
@@ -57,7 +68,10 @@ void main() {
     });
 
     test('applies crossAxisAlignment end (right)', () {
-      final widget = HtmlColumn(children: [HtmlText('Item')], crossAxisAlignment: CrossAxisAlignment.end);
+      final widget = HtmlColumn(
+        children: [HtmlText('Item')],
+        crossAxisAlignment: CrossAxisAlignment.end,
+      );
       final fragment = renderAndParse(widget);
       final td = findFirst(fragment, 'td');
 

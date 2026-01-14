@@ -6,9 +6,7 @@ import '../utils/html_test_utils.dart';
 void main() {
   group('HtmlRichText', () {
     test('renders as p element', () {
-      final widget = HtmlRichText(
-        spans: [HtmlTextSpan('Hello')],
-      );
+      final widget = HtmlRichText(spans: [HtmlTextSpan('Hello')]);
       final fragment = renderAndParse(widget);
       final p = findFirst(fragment, 'p');
 
@@ -16,9 +14,7 @@ void main() {
     });
 
     test('p element has zero margin and padding', () {
-      final widget = HtmlRichText(
-        spans: [HtmlTextSpan('Hello')],
-      );
+      final widget = HtmlRichText(spans: [HtmlTextSpan('Hello')]);
       final fragment = renderAndParse(widget);
       final p = findFirst(fragment, 'p');
 
@@ -28,9 +24,7 @@ void main() {
     });
 
     test('renders single span as span element', () {
-      final widget = HtmlRichText(
-        spans: [HtmlTextSpan('Hello')],
-      );
+      final widget = HtmlRichText(spans: [HtmlTextSpan('Hello')]);
       final fragment = renderAndParse(widget);
       final span = findFirst(fragment, 'span');
 
@@ -40,10 +34,7 @@ void main() {
 
     test('renders multiple spans', () {
       final widget = HtmlRichText(
-        spans: [
-          HtmlTextSpan('Hello '),
-          HtmlTextSpan('World'),
-        ],
+        spans: [HtmlTextSpan('Hello '), HtmlTextSpan('World')],
       );
       final fragment = renderAndParse(widget);
       final spans = findAll(fragment, 'span');
@@ -68,9 +59,7 @@ void main() {
 
     test('applies font size to span', () {
       final widget = HtmlRichText(
-        spans: [
-          HtmlTextSpan('Hello', style: const TextStyle(fontSize: 20)),
-        ],
+        spans: [HtmlTextSpan('Hello', style: const TextStyle(fontSize: 20))],
       );
       final fragment = renderAndParse(widget);
       final span = findFirst(fragment, 'span');
@@ -82,7 +71,10 @@ void main() {
     test('applies font weight to span', () {
       final widget = HtmlRichText(
         spans: [
-          HtmlTextSpan('Bold', style: const TextStyle(fontWeight: FontWeight.bold)),
+          HtmlTextSpan(
+            'Bold',
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
         ],
       );
       final fragment = renderAndParse(widget);
@@ -95,7 +87,10 @@ void main() {
     test('applies font style to span', () {
       final widget = HtmlRichText(
         spans: [
-          HtmlTextSpan('Italic', style: const TextStyle(fontStyle: FontStyle.italic)),
+          HtmlTextSpan(
+            'Italic',
+            style: const TextStyle(fontStyle: FontStyle.italic),
+          ),
         ],
       );
       final fragment = renderAndParse(widget);
@@ -121,7 +116,10 @@ void main() {
     test('applies background color to span', () {
       final widget = HtmlRichText(
         spans: [
-          HtmlTextSpan('Highlighted', style: const TextStyle(backgroundColor: Colors.grey)),
+          HtmlTextSpan(
+            'Highlighted',
+            style: const TextStyle(backgroundColor: Colors.grey),
+          ),
         ],
       );
       final fragment = renderAndParse(widget);
@@ -134,7 +132,10 @@ void main() {
     test('applies text decoration to span', () {
       final widget = HtmlRichText(
         spans: [
-          HtmlTextSpan('Underlined', style: const TextStyle(decoration: TextDecoration.underline)),
+          HtmlTextSpan(
+            'Underlined',
+            style: const TextStyle(decoration: TextDecoration.underline),
+          ),
         ],
       );
       final fragment = renderAndParse(widget);
@@ -146,9 +147,7 @@ void main() {
 
     test('renders span with href as anchor', () {
       final widget = HtmlRichText(
-        spans: [
-          HtmlTextSpan('Click here', href: 'https://example.com'),
-        ],
+        spans: [HtmlTextSpan('Click here', href: 'https://example.com')],
       );
       final fragment = renderAndParse(widget);
       final anchor = findFirst(fragment, 'a');
@@ -164,7 +163,10 @@ void main() {
           HtmlTextSpan(
             'Styled Link',
             href: 'https://example.com',
-            style: const TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+              color: Colors.blue,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ],
       );
@@ -177,9 +179,7 @@ void main() {
     });
 
     test('escapes HTML in span text', () {
-      final widget = HtmlRichText(
-        spans: [HtmlTextSpan('<b>Bold</b>')],
-      );
+      final widget = HtmlRichText(spans: [HtmlTextSpan('<b>Bold</b>')]);
       final html = renderWidget(widget);
 
       expect(html, contains('&lt;b&gt;Bold&lt;&#x2F;b&gt;'));
@@ -190,7 +190,10 @@ void main() {
       final widget = HtmlRichText(
         spans: [
           HtmlTextSpan('Normal '),
-          HtmlTextSpan('Bold', style: const TextStyle(fontWeight: FontWeight.bold)),
+          HtmlTextSpan(
+            'Bold',
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
           HtmlTextSpan(' and '),
           HtmlTextSpan('Link', href: 'https://example.com'),
         ],

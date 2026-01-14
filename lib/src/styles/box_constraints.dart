@@ -13,16 +13,16 @@ class BoxConstraints {
   });
 
   const BoxConstraints.tightFor({double? width, double? height})
-      : minWidth = width ?? 0.0,
-        maxWidth = width ?? double.infinity,
-        minHeight = height ?? 0.0,
-        maxHeight = height ?? double.infinity;
+    : minWidth = width ?? 0.0,
+      maxWidth = width ?? double.infinity,
+      minHeight = height ?? 0.0,
+      maxHeight = height ?? double.infinity;
 
   const BoxConstraints.expand({double? width, double? height})
-      : minWidth = width ?? double.infinity,
-        maxWidth = width ?? double.infinity,
-        minHeight = height ?? double.infinity,
-        maxHeight = height ?? double.infinity;
+    : minWidth = width ?? double.infinity,
+      maxWidth = width ?? double.infinity,
+      minHeight = height ?? double.infinity,
+      maxHeight = height ?? double.infinity;
 
   @override
   bool operator ==(Object other) =>

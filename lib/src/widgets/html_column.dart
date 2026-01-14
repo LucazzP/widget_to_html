@@ -22,7 +22,9 @@ class HtmlColumn extends HtmlRenderableWithChildren {
     final align = crossAxisAlignment.toHtmlHorizontal();
     final buffer = StringBuffer();
 
-    buffer.write('<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;">');
+    buffer.write(
+      '<table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse:collapse;">',
+    );
 
     for (var i = 0; i < children.length; i++) {
       buffer.write('<tr><td align="$align" style="padding:0;">');
@@ -31,7 +33,9 @@ class HtmlColumn extends HtmlRenderableWithChildren {
 
       // Add spacing between items
       if (spacing != null && i < children.length - 1) {
-        buffer.write('<tr><td style="height:${spacing}px;padding:0;"></td></tr>');
+        buffer.write(
+          '<tr><td style="height:${spacing}px;padding:0;"></td></tr>',
+        );
       }
     }
 
