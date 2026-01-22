@@ -1,33 +1,33 @@
-import 'package:widget_to_html/widget_to_html.dart';
+import 'package:widget_to_html/widget_to_html.dart' as html;
 
 void main(List<String> args) {
-  final email = HtmlDocument(
-    body: HtmlContainer(
-      padding: EdgeInsets.all(24),
-      color: Color(0xFFF5F5F5),
-      child: HtmlColumn(
+  final email = html.Page(
+    body: html.Container(
+      padding: html.EdgeInsets.all(24),
+      color: html.Color(0xFFF5F5F5),
+      child: html.Column(
         spacing: 16,
         children: [
-          HtmlText(
+          html.Text(
             'Welcome!',
-            style: TextStyle(
+            style: html.TextStyle(
               fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Color(0xFF333333),
+              fontWeight: html.FontWeight.bold,
+              color: html.Color(0xFF333333),
             ),
           ),
-          HtmlText('Thanks for signing up.'),
-          HtmlButton(
+          html.Text('Thanks for signing up.'),
+          html.Button(
             text: 'Get Started',
             href: 'https://example.com',
-            backgroundColor: Color(0xFF007BFF),
+            backgroundColor: html.Color(0xFF007BFF),
           ),
         ],
       ),
     ),
   );
 
-  final html = email.render();
+  final htmlOutput = email.render();
 
-  print(html);
+  print(htmlOutput);
 }

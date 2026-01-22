@@ -3,5 +3,7 @@
 /// More dartdocs go here.
 library;
 
-export 'src/html_base.dart';
-export 'src/html_widgets.dart';
+export 'src/core/page.dart';
+export 'src/widgets/widgets.dart';
+export 'src/styles/styles.dart';
+export 'src/core/renderable.dart';

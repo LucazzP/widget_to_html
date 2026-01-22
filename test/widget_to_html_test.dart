@@ -1,22 +1,22 @@
 import 'package:html/parser.dart' as html_parser;
 import 'package:test/test.dart';
-import 'package:widget_to_html/widget_to_html.dart';
+import 'package:widget_to_html/widget_to_html.dart' as html;
 
 void main() {
   group('A group of tests', () {
     test('generateHtml - comprehensive email template', () async {
       // Create a comprehensive email template using all widgets
-      final email = HtmlContainer(
+      final email = html.Container(
         // width: 600,
-        color: const Color(0xFFF5F5F5),
-        padding: const EdgeInsets.all(20),
-        child: HtmlColumn(
+        color: const html.Color(0xFFF5F5F5),
+        padding: const html.EdgeInsets.all(20),
+        child: html.Column(
           children: [
             // Header with centered logo
-            HtmlCenter(
-              child: HtmlContainer(
-                padding: const EdgeInsets.all(20),
-                child: HtmlImage(
+            html.Center(
+              child: html.Container(
+                padding: const html.EdgeInsets.all(20),
+                child: html.Image(
                   src: 'https://placehold.co/100x100',
                   width: 100,
                   height: 100,
@@ -25,362 +25,365 @@ void main() {
               ),
             ),
 
-            HtmlSizedBox(height: 20),
+            html.SizedBox(height: 20),
 
             // Navigation row
-            HtmlRow(
+            html.Row(
               children: [
-                HtmlLink(
+                html.Link(
                   text: 'Home',
                   href: '#home',
-                  style: const TextStyle(
-                    color: Color(0xFF007BFF),
+                  style: const html.TextStyle(
+                    color: html.Color(0xFF007BFF),
                     fontSize: 14,
                   ),
                 ),
-                HtmlLink(
+                html.Link(
                   text: 'Products',
                   href: '#products',
-                  style: const TextStyle(
-                    color: Color(0xFF007BFF),
+                  style: const html.TextStyle(
+                    color: html.Color(0xFF007BFF),
                     fontSize: 14,
                   ),
                 ),
-                HtmlLink(
+                html.Link(
                   text: 'About',
                   href: '#about',
-                  style: const TextStyle(
-                    color: Color(0xFF007BFF),
+                  style: const html.TextStyle(
+                    color: html.Color(0xFF007BFF),
                     fontSize: 14,
                   ),
                 ),
-                HtmlLink(
+                html.Link(
                   text: 'Contact',
                   href: '#contact',
-                  style: const TextStyle(
-                    color: Color(0xFF007BFF),
+                  style: const html.TextStyle(
+                    color: html.Color(0xFF007BFF),
                     fontSize: 14,
                   ),
                 ),
               ],
               spacing: 20,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: html.MainAxisAlignment.center,
             ),
 
-            HtmlSizedBox(height: 30),
+            html.SizedBox(height: 30),
 
             // Main content container
-            HtmlContainer(
-              color: Colors.white,
-              padding: const EdgeInsets.all(30),
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: const Color(0xFFE0E0E0), width: 1),
-              child: HtmlColumn(
+            html.Container(
+              color: html.Colors.white,
+              padding: const html.EdgeInsets.all(30),
+              borderRadius: html.BorderRadius.circular(8),
+              border: html.Border.all(
+                color: const html.Color(0xFFE0E0E0),
+                width: 1,
+              ),
+              child: html.Column(
                 children: [
                   // Title with rich text
-                  HtmlRichText(
+                  html.RichText(
                     spans: [
-                      HtmlTextSpan(
+                      html.TextSpan(
                         'Welcome to ',
-                        style: const TextStyle(
+                        style: const html.TextStyle(
                           fontSize: 24,
-                          color: Color(0xFF333333),
+                          color: html.Color(0xFF333333),
                         ),
                       ),
-                      HtmlTextSpan(
+                      html.TextSpan(
                         'Our Service',
-                        style: const TextStyle(
+                        style: const html.TextStyle(
                           fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF007BFF),
+                          fontWeight: html.FontWeight.bold,
+                          color: html.Color(0xFF007BFF),
                         ),
                       ),
                     ],
                   ),
 
-                  HtmlSizedBox(height: 20),
+                  html.SizedBox(height: 20),
 
                   // Regular text
-                  HtmlText(
+                  html.Text(
                     'This is a comprehensive test of all HTML email widgets. '
                     'We are testing various styling options and layouts.',
-                    style: const TextStyle(
+                    style: const html.TextStyle(
                       fontSize: 16,
-                      color: Color(0xFF666666),
+                      color: html.Color(0xFF666666),
                       height: 1.5,
                     ),
                   ),
 
-                  HtmlSizedBox(height: 20),
+                  html.SizedBox(height: 20),
 
                   // Divider
-                  HtmlDivider(
+                  html.Divider(
                     height: 2,
-                    color: const Color(0xFFE0E0E0),
-                    margin: const EdgeInsets.symmetric(vertical: 20),
+                    color: const html.Color(0xFFE0E0E0),
+                    margin: const html.EdgeInsets.symmetric(vertical: 20),
                   ),
 
                   // Two-column layout
-                  HtmlRow(
+                  html.Row(
                     children: [
-                      HtmlContainer(
+                      html.Container(
                         width: 250,
-                        padding: const EdgeInsets.all(15),
-                        color: const Color(0xFFF8F9FA),
-                        borderRadius: BorderRadius.circular(4),
-                        child: HtmlColumn(
+                        padding: const html.EdgeInsets.all(15),
+                        color: const html.Color(0xFFF8F9FA),
+                        borderRadius: html.BorderRadius.circular(4),
+                        child: html.Column(
                           children: [
-                            HtmlText(
+                            html.Text(
                               'Feature 1',
-                              style: const TextStyle(
+                              style: const html.TextStyle(
                                 fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF333333),
+                                fontWeight: html.FontWeight.bold,
+                                color: html.Color(0xFF333333),
                               ),
                             ),
-                            HtmlSizedBox(height: 10),
-                            HtmlText(
+                            html.SizedBox(height: 10),
+                            html.Text(
                               'Description of the first feature with some details.',
-                              style: const TextStyle(
+                              style: const html.TextStyle(
                                 fontSize: 14,
-                                color: Color(0xFF666666),
+                                color: html.Color(0xFF666666),
                               ),
                             ),
                           ],
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: html.CrossAxisAlignment.start,
                         ),
                       ),
-                      HtmlContainer(
+                      html.Container(
                         width: 250,
-                        padding: const EdgeInsets.all(15),
-                        color: const Color(0xFFF8F9FA),
-                        borderRadius: BorderRadius.circular(4),
-                        child: HtmlColumn(
+                        padding: const html.EdgeInsets.all(15),
+                        color: const html.Color(0xFFF8F9FA),
+                        borderRadius: html.BorderRadius.circular(4),
+                        child: html.Column(
                           children: [
-                            HtmlText(
+                            html.Text(
                               'Feature 2',
-                              style: const TextStyle(
+                              style: const html.TextStyle(
                                 fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                color: Color(0xFF333333),
+                                fontWeight: html.FontWeight.bold,
+                                color: html.Color(0xFF333333),
                               ),
                             ),
-                            HtmlSizedBox(height: 10),
-                            HtmlText(
+                            html.SizedBox(height: 10),
+                            html.Text(
                               'Description of the second feature with some details.',
-                              style: const TextStyle(
+                              style: const html.TextStyle(
                                 fontSize: 14,
-                                color: Color(0xFF666666),
+                                color: html.Color(0xFF666666),
                               ),
                             ),
                           ],
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: html.CrossAxisAlignment.start,
                         ),
                       ),
                     ],
                     spacing: 20,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: html.MainAxisAlignment.spaceBetween,
                   ),
 
-                  HtmlSizedBox(height: 30),
+                  html.SizedBox(height: 30),
 
                   // Centered button
-                  HtmlCenter(
-                    child: HtmlButton(
+                  html.Center(
+                    child: html.Button(
                       text: 'Get Started',
                       href: '#get-started',
-                      backgroundColor: const Color(0xFF007BFF),
-                      textColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(
+                      backgroundColor: const html.Color(0xFF007BFF),
+                      textColor: html.Colors.white,
+                      padding: const html.EdgeInsets.symmetric(
                         horizontal: 40,
                         vertical: 15,
                       ),
-                      borderRadius: BorderRadius.circular(6),
-                      textStyle: const TextStyle(
+                      borderRadius: html.BorderRadius.circular(6),
+                      textStyle: const html.TextStyle(
                         fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: html.FontWeight.bold,
                       ),
                     ),
                   ),
 
-                  HtmlSizedBox(height: 20),
+                  html.SizedBox(height: 20),
 
                   // Aligned content (right-aligned)
-                  HtmlAlign(
-                    alignment: Alignment.centerRight,
-                    child: HtmlText(
+                  html.Align(
+                    alignment: html.Alignment.centerRight,
+                    child: html.Text(
                       'Right-aligned text',
-                      style: const TextStyle(
+                      style: const html.TextStyle(
                         fontSize: 14,
-                        fontStyle: FontStyle.italic,
-                        color: Color(0xFF999999),
+                        fontStyle: html.FontStyle.italic,
+                        color: html.Color(0xFF999999),
                       ),
                     ),
                   ),
 
-                  HtmlSizedBox(height: 20),
+                  html.SizedBox(height: 20),
 
                   // Sized box with child
-                  HtmlSizedBox(
+                  html.SizedBox(
                     width: 500,
                     height: 100,
-                    child: HtmlContainer(
-                      color: const Color(0xFFE3F2FD),
-                      padding: const EdgeInsets.all(15),
-                      borderRadius: BorderRadius.circular(4),
-                      child: HtmlText(
+                    child: html.Container(
+                      color: const html.Color(0xFFE3F2FD),
+                      padding: const html.EdgeInsets.all(15),
+                      borderRadius: html.BorderRadius.circular(4),
+                      child: html.Text(
                         'This is inside a SizedBox with specific dimensions.',
-                        style: const TextStyle(
+                        style: const html.TextStyle(
                           fontSize: 14,
-                          color: Color(0xFF1976D2),
+                          color: html.Color(0xFF1976D2),
                         ),
-                        textAlign: TextAlign.center,
+                        textAlign: html.TextAlign.center,
                       ),
                     ),
                   ),
 
-                  HtmlSizedBox(height: 20),
+                  html.SizedBox(height: 20),
 
                   // Padding widget
-                  HtmlPadding(
-                    padding: const EdgeInsets.all(20),
-                    child: HtmlContainer(
-                      color: const Color(0xFFFFF3E0),
-                      child: HtmlText(
+                  html.Padding(
+                    padding: const html.EdgeInsets.all(20),
+                    child: html.Container(
+                      color: const html.Color(0xFFFFF3E0),
+                      child: html.Text(
                         'This content is wrapped in a Padding widget.',
-                        style: const TextStyle(
+                        style: const html.TextStyle(
                           fontSize: 14,
-                          color: Color(0xFFE65100),
+                          color: html.Color(0xFFE65100),
                         ),
                       ),
                     ),
                   ),
 
-                  HtmlSizedBox(height: 20),
+                  html.SizedBox(height: 20),
 
                   // Rich text with links
-                  HtmlRichText(
+                  html.RichText(
                     spans: [
-                      HtmlTextSpan(
+                      html.TextSpan(
                         'Visit our ',
-                        style: const TextStyle(
+                        style: const html.TextStyle(
                           fontSize: 14,
-                          color: Color(0xFF333333),
+                          color: html.Color(0xFF333333),
                         ),
                       ),
-                      HtmlTextSpan(
+                      html.TextSpan(
                         'website',
                         href: 'https://example.com',
-                        style: const TextStyle(
+                        style: const html.TextStyle(
                           fontSize: 14,
-                          color: Color(0xFF007BFF),
-                          decoration: TextDecoration.underline,
+                          color: html.Color(0xFF007BFF),
+                          decoration: html.TextDecoration.underline,
                         ),
                       ),
-                      HtmlTextSpan(
+                      html.TextSpan(
                         ' for more information.',
-                        style: const TextStyle(
+                        style: const html.TextStyle(
                           fontSize: 14,
-                          color: Color(0xFF333333),
+                          color: html.Color(0xFF333333),
                         ),
                       ),
                     ],
                   ),
 
-                  HtmlSizedBox(height: 20),
+                  html.SizedBox(height: 20),
 
                   // Text with various styles
-                  HtmlText(
+                  html.Text(
                     'Bold and colored text example',
-                    style: const TextStyle(
+                    style: const html.TextStyle(
                       fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: Color(0xFFD32F2F),
-                      backgroundColor: Color(0xFFFFEBEE),
+                      fontWeight: html.FontWeight.bold,
+                      color: html.Color(0xFFD32F2F),
+                      backgroundColor: html.Color(0xFFFFEBEE),
                     ),
-                    textAlign: TextAlign.center,
+                    textAlign: html.TextAlign.center,
                   ),
 
-                  HtmlSizedBox(height: 10),
+                  html.SizedBox(height: 10),
 
-                  HtmlText(
+                  html.Text(
                     'Underlined text example',
-                    style: const TextStyle(
+                    style: const html.TextStyle(
                       fontSize: 16,
-                      decoration: TextDecoration.underline,
-                      color: Color(0xFF333333),
+                      decoration: html.TextDecoration.underline,
+                      color: html.Color(0xFF333333),
                     ),
                   ),
 
-                  HtmlSizedBox(height: 20),
+                  html.SizedBox(height: 20),
 
                   // Final divider
-                  HtmlDivider(
-                    color: const Color(0xFFBDBDBD),
-                    margin: const EdgeInsets.symmetric(vertical: 10),
+                  html.Divider(
+                    color: const html.Color(0xFFBDBDBD),
+                    margin: const html.EdgeInsets.symmetric(vertical: 10),
                   ),
 
                   // Footer text
-                  HtmlText(
+                  html.Text(
                     '© 2024 Company Name. All rights reserved.',
-                    style: const TextStyle(
+                    style: const html.TextStyle(
                       fontSize: 12,
-                      color: Color(0xFF999999),
+                      color: html.Color(0xFF999999),
                     ),
-                    textAlign: TextAlign.center,
+                    textAlign: html.TextAlign.center,
                   ),
                 ],
                 spacing: 15,
               ),
             ),
 
-            HtmlSizedBox(height: 20),
+            html.SizedBox(height: 20),
 
             // Footer links
-            HtmlCenter(
-              child: HtmlRow(
+            html.Center(
+              child: html.Row(
                 children: [
-                  HtmlLink(
+                  html.Link(
                     text: 'Privacy Policy',
                     href: '#privacy',
-                    style: const TextStyle(
+                    style: const html.TextStyle(
                       fontSize: 12,
-                      color: Color(0xFF666666),
+                      color: html.Color(0xFF666666),
                     ),
                   ),
-                  HtmlText(
+                  html.Text(
                     ' | ',
-                    style: const TextStyle(
+                    style: const html.TextStyle(
                       fontSize: 12,
-                      color: Color(0xFF999999),
+                      color: html.Color(0xFF999999),
                     ),
                   ),
-                  HtmlLink(
+                  html.Link(
                     text: 'Terms of Service',
                     href: '#terms',
-                    style: const TextStyle(
+                    style: const html.TextStyle(
                       fontSize: 12,
-                      color: Color(0xFF666666),
+                      color: html.Color(0xFF666666),
                     ),
                   ),
-                  HtmlText(
+                  html.Text(
                     ' | ',
-                    style: const TextStyle(
+                    style: const html.TextStyle(
                       fontSize: 12,
-                      color: Color(0xFF999999),
+                      color: html.Color(0xFF999999),
                     ),
                   ),
-                  HtmlLink(
+                  html.Link(
                     text: 'Unsubscribe',
                     href: '#unsubscribe',
-                    style: const TextStyle(
+                    style: const html.TextStyle(
                       fontSize: 12,
-                      color: Color(0xFF666666),
+                      color: html.Color(0xFF666666),
                     ),
                   ),
                 ],
                 spacing: 5,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: html.MainAxisAlignment.center,
               ),
             ),
           ],
@@ -389,21 +392,23 @@ void main() {
       );
 
       // Generate HTML
-      final html = HtmlDocument(body: email).render();
+      final htmlOutput = html.Page(body: email).render();
 
       // validate the html
-      final document = html_parser.parse(html);
+      final document = html_parser.parse(htmlOutput);
       expect(document.hasContent(), isTrue);
 
       // Verify the HTML contains expected elements
-      expect(html, contains('<!DOCTYPE html>'));
-      expect(html, contains('<html>'));
-      expect(html, contains('Company Logo')); // Image alt text
-      expect(html, contains('Welcome to')); // Rich text
-      expect(html, contains('Get Started')); // Button
-      expect(html, contains('<a href')); // Links
-      expect(html, contains('border-radius')); // Border radius
-      expect(html, contains('background-color')); // Background colors
+      expect(htmlOutput, contains('<!DOCTYPE html>'));
+      expect(htmlOutput, contains('<html>'));
+      expect(htmlOutput, contains('Company Logo')); // Image alt text
+      expect(htmlOutput, contains('Welcome to')); // Rich text
+      expect(htmlOutput, contains('Get Started')); // Button
+      expect(htmlOutput, contains('<a href')); // Links
+      expect(htmlOutput, contains('border-radius')); // Border radius
+      expect(htmlOutput, contains('background-color')); // Background colors
+
+      print(htmlOutput);
     });
   });
 }
