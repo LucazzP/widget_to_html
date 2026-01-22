@@ -21,36 +21,39 @@ dependencies:
 
 ## Usage
 
-```dart
-import 'package:widget_to_html/widget_to_html.dart';
+Use an import alias (for example, `as html`) to avoid conflicts with Flutter
+widget names like `Text`, `Column`, and `Container`.
 
-final email = HtmlDocument(
-  body: HtmlContainer(
-    padding: EdgeInsets.all(24),
-    color: Color(0xFFF5F5F5),
-    child: HtmlColumn(
+```dart
+import 'package:widget_to_html/widget_to_html.dart' as html;
+
+final email = html.Page(
+  body: html.Container(
+    padding: html.EdgeInsets.all(24),
+    color: html.Color(0xFFF5F5F5),
+    child: html.Column(
       spacing: 16,
       children: [
-        HtmlText(
+        html.Text(
           'Welcome!',
-          style: TextStyle(
+          style: html.TextStyle(
             fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF333333),
+            fontWeight: html.FontWeight.bold,
+            color: html.Color(0xFF333333),
           ),
         ),
-        HtmlText('Thanks for signing up.'),
-        HtmlButton(
+        html.Text('Thanks for signing up.'),
+        html.Button(
           text: 'Get Started',
           href: 'https://example.com',
-          backgroundColor: Color(0xFF007BFF),
+          backgroundColor: html.Color(0xFF007BFF),
         ),
       ],
     ),
   ),
 );
 
-final html = email.render();
+final htmlOutput = email.render();
 ```
 
 ### Produced HTML (minified):
@@ -62,20 +65,20 @@ final html = email.render();
 
 | Widget | Description |
 |--------|-------------|
-| `HtmlDocument` | Wraps content in a complete HTML document |
-| `HtmlContainer` | Box with padding, margin, background, border |
-| `HtmlColumn` | Vertical layout |
-| `HtmlRow` | Horizontal layout |
-| `HtmlText` | Styled text paragraph |
-| `HtmlRichText` | Text with multiple styled spans |
-| `HtmlButton` | Email-safe button (VML for Outlook) |
-| `HtmlLink` | Anchor link |
-| `HtmlImage` | Image (supports base64 embedding) |
-| `HtmlDivider` | Horizontal rule |
-| `HtmlPadding` | Padding wrapper |
-| `HtmlAlign` | Alignment wrapper |
-| `HtmlCenter` | Center alignment |
-| `HtmlSizedBox` | Fixed size box |
+| `Page` | Wraps content in a complete HTML document |
+| `Container` | Box with padding, margin, background, border |
+| `Column` | Vertical layout |
+| `Row` | Horizontal layout |
+| `Text` | Styled text paragraph |
+| `RichText` | Text with multiple styled spans (`TextSpan`) |
+| `Button` | Email-safe button (VML for Outlook) |
+| `Link` | Anchor link |
+| `Image` | Image (supports base64 embedding) |
+| `Divider` | Horizontal rule |
+| `Padding` | Padding wrapper |
+| `Align` | Alignment wrapper |
+| `Center` | Center alignment |
+| `SizedBox` | Fixed size box |
 
 ## Style Classes
 
