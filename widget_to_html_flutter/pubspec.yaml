@@ -1,0 +1,18 @@
+name: widget_to_html_flutter
+description: "A Flutter extension for widget_to_html to help use Flutter widgets, transforming them into HTML widgets."
+version: 1.0.0
+homepage: https://github.com/LucazzP/widget_to_html
+
+environment:
+  sdk: ^3.0.0
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  widget_to_html: ^1.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
